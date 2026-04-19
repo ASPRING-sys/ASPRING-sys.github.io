@@ -71,6 +71,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chess" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/19/chess/" class="article-date">
+  <time class="dt-published" datetime="2026-04-19T07:34:01.000Z" itemprop="datePublished">2026-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/19/chess/">如何使用C++搭建国际象棋网站</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="如何使用C-搭建国际象棋网站"><a href="#如何使用C-搭建国际象棋网站" class="headerlink" title="如何使用C++搭建国际象棋网站"></a>如何使用C++搭建国际象棋网站</h1><p>作者在高二入坑了国际象棋,在大学又来到了计算机专业,所以非常想搭建一个属于自己的国际象棋网站,虽然不可能做到像<br>chess.com或者lichess.org那样功能齐全以供广大爱好者们下棋和复盘,但是对于作者自己而言却是一个很好的学习锻炼<br>的机会.<br>所以接下来,我会一步一步的拆解我搭建的国际象棋项目.</p>
+<h2 id="第一步-棋子以及其行动逻辑-Pawn-Rook-Knight-为了避免与King混淆-简写时一般写作N-Bishop-King-Queen"><a href="#第一步-棋子以及其行动逻辑-Pawn-Rook-Knight-为了避免与King混淆-简写时一般写作N-Bishop-King-Queen" class="headerlink" title="第一步,棋子以及其行动逻辑:Pawn,Rook,Knight(为了避免与King混淆,简写时一般写作N),Bishop,King,Queen"></a>第一步,棋子以及其行动逻辑:Pawn,Rook,Knight(为了避免与King混淆,简写时一般写作N),Bishop,King,Queen</h2><p>1.为了避免代码过于臃肿,我们先定义棋子的基本特征<br>‘’’cpp<br>    enum  PieceType {<br>	PAWN,<br>	ROOK,<br>	KNIGHT,<br>	BISHOP,<br>	QUEEN,<br>	KING<br>};<br>enum Color {<br>	WHITE,<br>	BLACK<br>};<br>enum MoveMent {<br>	MOVE,<br>	CASTLING,<br>	ENPASSANT,<br>	INVALID<br>};<br>struct Position {<br>	int x;<br>	int y;<br>};<br>‘’’<br>2.再定义一个基类</p>
+<p>考虑到Q这个棋子的行动方式其实就是R和B的结合体,所以我打算先实现R和B</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/19/chess/" data-id="cuidOglOO9QTmbZX5Urw1UxNn" data-title="如何使用C++搭建国际象棋网站" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chess/" rel="tag">chess</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-my-first-post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/04/18/my-first-post/" class="article-date">
@@ -100,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/18/my-first-post/" data-id="cuidD-8KHOyk3MvFKQoJggaOK" data-title="my-first-post" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/18/my-first-post/" data-id="cuidezv7um4mrKR-6z9uRzP9B" data-title="my-first-post" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -153,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/18/hello-world/" data-id="cuidWeS8JG1JOWxvzwQYSyKlO" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/18/hello-world/" data-id="cuidK5v3XDWJFkYoQiQvcIw1L" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -178,7 +221,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" rel="tag">如何搭建自己的博客网站</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/chess/" rel="tag">chess</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/" rel="tag">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" rel="tag">如何搭建自己的博客网站</a></li></ul>
     </div>
   </div>
 
@@ -188,7 +231,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" style="font-size: 10px;">如何搭建自己的博客网站</a>
+      <a href="/tags/chess/" style="font-size: 10px;">chess</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" style="font-size: 10px;">如何搭建自己的博客网站</a>
     </div>
   </div>
 
@@ -208,6 +251,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2026/04/19/chess/">如何使用C++搭建国际象棋网站</a>
+          </li>
         
           <li>
             <a href="/2026/04/18/my-first-post/">my-first-post</a>
